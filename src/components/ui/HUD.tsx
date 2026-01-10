@@ -18,31 +18,6 @@ export const HUD = () => {
                     <span className="stat-value">{launchAngle}°</span>
                 </div>
             </div>
-
-            {/* Bottom Camera Controls */}
-            <div className="camera-controls glass-panel">
-                <button
-                    className={`cam-btn ${cameraMode === 'GUNNER' ? 'active' : ''}`}
-                    onClick={() => setCameraMode('GUNNER')}
-                    title="Gunner View"
-                >
-                    <Crosshair size={20} />
-                </button>
-                <button
-                    className={`cam-btn ${cameraMode === 'SPECTATOR' ? 'active' : ''}`}
-                    onClick={() => setCameraMode('SPECTATOR')}
-                    title="Spectator View"
-                >
-                    <Eye size={20} />
-                </button>
-                <button
-                    className={`cam-btn ${cameraMode === 'BULLET' ? 'active' : ''}`}
-                    onClick={() => setCameraMode('BULLET')}
-                    title="Bullet Cam"
-                >
-                    <Video size={20} />
-                </button>
-            </div>
         </div>
     );
 };
