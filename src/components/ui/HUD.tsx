@@ -27,7 +27,6 @@ export const HUD = () => {
                     title="Gunner View"
                 >
                     <Crosshair size={20} />
-                    <span>GUNNER</span>
                 </button>
                 <button
                     className={`cam-btn ${cameraMode === 'SPECTATOR' ? 'active' : ''}`}
@@ -35,7 +34,6 @@ export const HUD = () => {
                     title="Spectator View"
                 >
                     <Eye size={20} />
-                    <span>SPECTATOR</span>
                 </button>
                 <button
                     className={`cam-btn ${cameraMode === 'BULLET' ? 'active' : ''}`}
@@ -43,7 +41,6 @@ export const HUD = () => {
                     title="Bullet Cam"
                 >
                     <Video size={20} />
-                    <span>BULLET</span>
                 </button>
             </div>
         </div>

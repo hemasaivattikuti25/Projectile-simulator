@@ -53,20 +53,9 @@ function App() {
         <HUD />
 
         <div className="ui-overlay">
-          <div className="header-section">
-            <div className="title-container">
-              <h1 className="title">PROJECTILE SIMULATOR</h1>
-              <p className="subtitle">Developed by Hemasai Vattikuti</p>
-            </div>
-          </div>
-
           <ControlPanel />
           <Analytics />
           <KeyboardHints />
-
-          <div className="footer-credit">
-            Developed by Hemasai Vattikuti
-          </div>
         </div>
       </div>
     </>
