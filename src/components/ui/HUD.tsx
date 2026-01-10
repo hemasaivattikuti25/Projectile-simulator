@@ -17,10 +17,6 @@ export const HUD = () => {
                     <span className="stat-label">ANGLE</span>
                     <span className="stat-value">{launchAngle}°</span>
                 </div>
-                <div className="stat-item">
-                    <span className="stat-label">MODE</span>
-                    <span className="stat-value active-mode">{cameraMode}</span>
-                </div>
             </div>
 
             {/* Bottom Camera Controls */}

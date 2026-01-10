@@ -61,3 +61,18 @@
     background: #00f2ff;
     border-radius: 50%;
 }
+.chart-container h4 {
+    color: white !important;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    opacity: 1;
+}
+
+.recharts-cartesian-axis-tick-value {
+    fill: #e6e6e6 !important;
+    font-weight: 600;
+    font-size: 11px;
+}
