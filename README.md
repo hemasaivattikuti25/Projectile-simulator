@@ -80,8 +80,8 @@ npm run dev
 
 **Hemasai Vattikuti**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/hemasai-vattikuti-186996256)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/hemasaivattikuti25)
+[![LinkedIn](www.linkedin.com/in/hemsaivattikuti)
+[![GitHub](https://github.com/hemasaivattikuti25)
 
 ---
 
