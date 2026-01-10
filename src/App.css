@@ -75,3 +75,23 @@ body {
   border: 1px solid var(--glass-border);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
 }
+.footer-credit {
+  margin-top: auto;
+  align-self: center;
+  pointer-events: all;
+  background: var(--glass-panel);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  text-align: center;
+}
+
+.footer-credit:hover {
+  opacity: 1;
+}

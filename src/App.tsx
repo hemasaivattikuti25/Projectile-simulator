@@ -63,6 +63,10 @@ function App() {
           <ControlPanel />
           <Analytics />
           <KeyboardHints />
+
+          <div className="footer-credit">
+            Developed by Hemasai Vattikuti
+          </div>
         </div>
       </div>
     </>
