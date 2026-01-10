@@ -28,8 +28,8 @@ A high-fidelity **scientific visualization of projectile motion** built with Rea
 
 1.  **Clone the repo:**
     ```bash
-    git clone https://github.com/hemasaivattikuti25/hk.git
-    cd hk
+    git clone https://github.com/hemasaivattikuti25/Projectile-simulator.git
+    cd Projectile-simulator
     ```
 
 2.  **Install dependencies:**
