@@ -1,53 +1,57 @@
-# React + TypeScript + Vite
+# 3D Projectile Simulator 🎯
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-fidelity **scientific visualization of projectile motion** built with React, Three.js (Fiber/Drei), and custom physics solvers. This interactive simulation allows users to experiment with ballistics in a real-time 3D environment.
 
-Currently, two official plugins are available:
+![Project Preview](public/vite.svg) *Add a screenshot here later if you like!*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+*   **Real-time 3D Physics**: Custom RK4 (Runge-Kutta 4th Order) integrator for precise trajectory calculation including air resistance and wind.
+*   **Interactive Controls**:
+    *   Adjust Launch Angle and Velocity 📐
+    *   Change Gravity (Earth, Moon, Mars, etc.) or enable Anti-Gravity 🌑
+    *   Control Wind Speed and Direction 💨
+    *   Modify Projectile Mass ⚖️
+*   **Data Analytics**: Real-time graphs showing Height vs. Time and Velocity vs. Time.
+*   **Dynamic Cameras**: Switch between "Gunner View", "Spectator View" (Orbit), and "Bullet Cam".
+*   **Modern UI**: Sleek, glassmorphism-inspired interface with keyboard shortcuts.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+*   **Frontend**: React 19, TypeScript, Vite
+*   **3D / Graphics**: @react-three/fiber, @react-three/drei, Three.js
+*   **Physics**: Custom Physics Engine (RK4 Solver) & Rapier (for collisions)
+*   **Styling**: CSS Modules, Lucide React (Icons)
+*   **Charting**: Recharts
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🎮 How to Run
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1.  **Clone the repo:**
+    ```bash
+    git clone https://github.com/hemasaivattikuti25/hk.git
+    cd hk
+    ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3.  **Start Development Server:**
+    ```bash
+    npm run dev
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ⌨️ Controls
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
+*   **Space**: Fire Cannon
+*   **R**: Reset Simulation
+*   **Arrow Up/Down**: Adjust Angle
+*   **Mouse**: Orbit Camera (Spectator Mode)
+
+## 📄 License
+
+MIT License
 import reactDom from 'eslint-plugin-react-dom'
 
 export default defineConfig([
