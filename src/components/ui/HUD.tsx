@@ -1,9 +1,8 @@
 import { useStore } from '../../store/useStore';
-import { Crosshair, Eye, Video } from 'lucide-react';
 import './HUD.css';
 
 export const HUD = () => {
-    const { cameraMode, setCameraMode, launchVelocity, launchAngle } = useStore();
+    const { launchVelocity, launchAngle } = useStore();
 
     return (
         <div className="hud-container">
