@@ -53,6 +53,13 @@ function App() {
         <HUD />
 
         <div className="ui-overlay">
+          <div className="header-section">
+            <div className="title-container-dark">
+              <h1 className="title-dark">PROJECTILE SIMULATOR</h1>
+              <p className="subtitle-dark">Developed by Hemasai Vattikuti</p>
+            </div>
+          </div>
+
           <ControlPanel />
           <Analytics />
           <KeyboardHints />
