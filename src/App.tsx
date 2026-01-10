@@ -56,7 +56,7 @@ function App() {
           <div className="header-section">
             <div className="title-container">
               <h1 className="title">PROJECTILE SIMULATOR</h1>
-              <p className="subtitle">SIMULATION LABS</p>
+              <p className="subtitle">Developed by Hemasai Vattikuti</p>
             </div>
           </div>
 

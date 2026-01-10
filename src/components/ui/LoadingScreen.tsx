@@ -31,6 +31,9 @@ export const LoadingScreen = () => {
                 </div>
                 
                 <h2 className="loading-title">PROJECTILE SIMULATOR</h2>
+                <div style={{ marginTop: '5px', marginBottom: '15px', color: '#4b5563', fontSize: '0.8rem', letterSpacing: '1px' }}>
+                    Developed by Hemasai Vattikuti
+                </div>
                 
                 <div className="loading-bar-container">
                     <div 
