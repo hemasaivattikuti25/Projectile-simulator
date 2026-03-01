@@ -117,7 +117,7 @@ const ShootingScene = () => {
 
 export const Scene = () => {
     return (
-        <div style={{ width: '100vw', height: '100vh', background: '#F3F4F6' }}>
+        <div style={{ width: '100vw', height: '100vh', background: '#0a0a0f' }}>
             <Canvas shadows camera={{ position: [5, 5, 20], fov: 45 }}>
                 <Suspense fallback={null}>
                     <ShootingScene />

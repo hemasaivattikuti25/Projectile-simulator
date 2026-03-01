@@ -52,10 +52,10 @@ export const MotionGraphs = () => {
         <div style={{
             position: 'absolute',
             bottom: '2rem',
-            left: '2rem',
-            width: '400px',
-            backgroundColor: 'rgba(30, 41, 59, 0.9)', // Dark background
-            padding: '1rem',
+            left: 'calc(340px + 4rem)',
+            width: '380px',
+            backgroundColor: 'rgba(18, 18, 28, 0.9)', // Match new dark glass
+            padding: '1.5rem',
             borderRadius: '16px',
             backdropFilter: 'blur(10px)',
             boxShadow: '0 4px 6px rgba(0,0,0,0.3)',

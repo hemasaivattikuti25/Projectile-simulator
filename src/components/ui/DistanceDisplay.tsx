@@ -43,9 +43,9 @@ export const DistanceDisplay = () => {
     return (
         <div style={{
             position: 'absolute',
-            top: '50%',
+            top: '2rem',
             left: '50%',
-            transform: 'translate(-50%, -50%)',
+            transform: 'translateX(-50%)',
             backgroundColor: 'rgba(0, 0, 0, 0.8)',
             padding: '1.5rem 2rem',
             borderRadius: '16px',
