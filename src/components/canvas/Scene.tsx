@@ -8,7 +8,6 @@ import { DistanceMarkers } from './DistanceMarkers';
 import * as THREE from 'three';
 import { useStore } from '../../store/useStore';
 
-// Helper component to update OrbitControls target
 const CameraController = () => {
     const { isFired, startTime, launchAngle, launchVelocity, gravity, isAntiGravity, cannonPosition } = useStore();
     const controlsRef = useRef<any>(null);
@@ -104,13 +103,7 @@ const ShootingScene = () => {
                 <meshBasicMaterial color="#3b82f6" />
             </mesh>
 
-            {/* Single Smart Controller */}
             <CameraController />
-
-            {/* Remove old CameraRig if we use OrbitControls for everything? 
-                User said "Move anywhere" "360 degree view" -> OrbitControls is best.
-                CameraRig forces position. So we remove CameraRig component usage here.
-            */}
         </>
     );
 };

@@ -6,7 +6,8 @@
 
 **A real-time 3D physics engine — built for the browser.**
 
-[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Click%20Here-00f2ff?style=for-the-badge)](https://hemasaivattikuti25.github.io/Projectile-simulator/)
+[![Live Demo (Vercel)](https://img.shields.io/badge/🚀%20Live%20Demo-Vercel-00f2ff?style=for-the-badge)](https://projectile-simulator-rho.vercel.app)
+[![Live Demo (GitHub Pages)](https://img.shields.io/badge/🚀%20Live%20Demo-GitHub%20Pages-24292f?style=for-the-badge)](https://hemasaivattikuti25.github.io/Projectile-simulator/)
 [![GitHub Stars](https://img.shields.io/github/stars/hemasaivattikuti25/Projectile-simulator?style=for-the-badge&color=yellow)](https://github.com/hemasaivattikuti25/Projectile-simulator/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
@@ -16,6 +17,7 @@
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
 ![Zustand](https://img.shields.io/badge/Zustand-FF4500?style=flat-square)
 ![Rapier](https://img.shields.io/badge/Rapier_Physics-1a1a2e?style=flat-square)
+![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000?style=flat-square&logo=vercel&logoColor=white)
 
 </div>
 
@@ -24,6 +26,10 @@
 ## 📸 Preview
 
 > *Launch a cannon, watch the arc, analyse the data — all in real-time 3D.*
+
+| 3D Scene & Controls | Live Motion Graphs |
+|:---:|:---:|
+| Fire projectiles across realistic terrain with adjustable parameters | Real-time velocity & height charts plotted during flight |
 
 ---
 
@@ -72,32 +78,32 @@ Whether you're exploring kinematics, building intuition for physics, or just wan
 
 ## 🛠️ Tech Stack
 
-```
-React 19 + TypeScript  →  UI & logic
-Vite                   →  Build tool
-Three.js               →  3D rendering
-@react-three/fiber     →  React wrapper for Three.js
-@react-three/drei      →  Camera, Grid, Environment helpers
-Rapier (WASM)          →  Real-time physics engine
-Zustand                →  Global state management
-Recharts               →  Data charts
-Lucide React           →  Icons
-Vanilla CSS3           →  Glassmorphism styling & animations
-```
+| Technology | Purpose |
+|:---|:---|
+| **React 19 + TypeScript** | UI & application logic |
+| **Vite 7** | Lightning-fast build tool & dev server |
+| **Three.js** | 3D rendering engine |
+| **@react-three/fiber** | React declarative wrapper for Three.js |
+| **@react-three/drei** | Camera, Grid, Environment, Trail helpers |
+| **Rapier (WASM)** | Real-time physics engine |
+| **Zustand** | Lightweight global state management |
+| **Recharts** | Responsive data visualization charts |
+| **Lucide React** | Modern icon library |
+| **Vanilla CSS3** | Glassmorphism styling & animations |
 
 ---
 
 ## ⚡ Run Locally
 
 ```bash
-# Clone
+# Clone the repository
 git clone https://github.com/hemasaivattikuti25/Projectile-simulator.git
 cd Projectile-simulator
 
-# Install
+# Install dependencies
 npm install
 
-# Run dev server
+# Start the development server
 npm run dev
 ```
 
@@ -106,7 +112,32 @@ Open → **http://localhost:5173**
 ```bash
 # Build for production
 npm run build
+
+# Preview production build locally
+npm run preview
 ```
+
+---
+
+## 🌐 Deployment
+
+### Vercel (Recommended)
+
+This project is deployed on **Vercel** with zero-config. Simply push to `main` and Vercel auto-deploys.
+
+- **Live URL**: [projectile-simulator-rho.vercel.app](https://projectile-simulator-rho.vercel.app)
+- **Framework Preset**: Vite
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+
+A [`vercel.json`](vercel.json) is included with SPA rewrites and asset caching headers.
+
+### GitHub Pages
+
+GitHub Pages deployment is handled automatically via GitHub Actions on push to `main`.
+
+- **Live URL**: [hemasaivattikuti25.github.io/Projectile-simulator](https://hemasaivattikuti25.github.io/Projectile-simulator/)
+- The workflow sets the proper `base` path for sub-directory hosting via the `GITHUB_PAGES` environment variable.
 
 ---
 
@@ -116,25 +147,39 @@ npm run build
 src/
 ├── components/
 │   ├── canvas/
-│   │   ├── Scene.tsx          # Root 3D canvas + lighting
-│   │   ├── Cannon.tsx         # 3D cannon mesh
-│   │   ├── Projectile.tsx     # Flying projectile mesh
-│   │   ├── Trajectory.tsx     # Predicted arc path
-│   │   ├── Explosion.tsx      # Impact particle effect
-│   │   └── DistanceMarkers.tsx
+│   │   ├── Scene.tsx              # Root 3D canvas + lighting + camera
+│   │   ├── Cannon.tsx             # 3D cannon mesh with angle rotation
+│   │   ├── Projectile.tsx         # Flying projectile with trail effect
+│   │   ├── Trajectory.tsx         # Predicted arc path (dashed line)
+│   │   ├── Explosion.tsx          # Impact particle effect (instanced)
+│   │   ├── DistanceMarkers.tsx    # Distance markers every 50m
+│   │   ├── CameraController.tsx   # Multi-mode camera system
+│   │   ├── CameraRig.tsx          # Gunner/Bullet camera logic
+│   │   └── FollowCam.tsx          # Projectile follow camera
 │   └── ui/
-│       ├── ControlPanel.tsx   # All physics input sliders
-│       ├── Analytics.tsx      # Pre-launch chart preview
-│       ├── MotionGraphs.tsx   # Live flight data graphs
-│       ├── HUD.tsx            # Velocity/angle HUD bar
-│       ├── LoadingScreen.tsx
-│       └── KeyboardHints.tsx
-├── lib/physics/
-│   └── rk4Solver.ts           # Custom RK4 integration engine
+│       ├── ControlPanel.tsx       # Physics input sliders & actions
+│       ├── ControlPanel.css       # Control panel styles
+│       ├── Analytics.tsx          # Pre-launch RK4 chart preview
+│       ├── Analytics.css          # Analytics panel styles
+│       ├── MotionGraphs.tsx       # Live flight data graphs
+│       ├── DistanceDisplay.tsx    # Real-time distance & height HUD
+│       ├── HUD.tsx                # Velocity/Angle top bar
+│       ├── HUD.css                # HUD styles
+│       ├── LoadingScreen.tsx      # Animated loading screen
+│       ├── LoadingScreen.css      # Loading screen styles
+│       ├── KeyboardHints.tsx      # Keyboard shortcut overlay
+│       └── KeyboardHints.css      # Keyboard hints styles
+├── lib/
+│   └── physics/
+│       └── rk4Solver.ts           # Custom RK4 integration engine
 ├── store/
-│   └── useStore.ts            # Zustand global state
-└── utils/
-    └── physicsUtils.ts        # Physics helper functions
+│   └── useStore.ts                # Zustand global state
+├── utils/
+│   └── physicsUtils.ts            # Physics helper functions
+├── App.tsx                        # Root component with keyboard shortcuts
+├── App.css                        # App layout & glassmorphism styles
+├── main.tsx                       # React entry point
+└── index.css                      # CSS variables & global styles
 ```
 
 ---
@@ -154,6 +199,25 @@ Forces applied per step:
 
 RK4 averages four slope estimates per step, making it significantly more accurate than basic Euler integration — especially over long trajectories.
 
+### Why RK4?
+
+| Method | Accuracy | Error per Step |
+|:---|:---|:---|
+| Euler | 1st order | O(h²) |
+| RK2 (Midpoint) | 2nd order | O(h³) |
+| **RK4** | **4th order** | **O(h⁵)** |
+
+---
+
+## 🧩 Key Implementation Details
+
+- **State Management**: Zustand store with typed actions for all simulation parameters
+- **Real-time Rendering**: `useFrame` hooks for 60fps projectile position updates
+- **Dual Analytics**: Pre-launch RK4 prediction charts + live flight data graphs
+- **Camera System**: Auto-tracking OrbitControls that follow the projectile in flight
+- **Trail Effect**: `@react-three/drei` Trail component for motion visualization
+- **Responsive UI**: Glassmorphism panels with CSS custom properties for theming
+
 ---
 
 ## 👨‍💻 Author
@@ -166,6 +230,12 @@ RK4 averages four slope estimates per step, making it significantly more accurat
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hemasaivattikuti25)
 
 </div>
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 

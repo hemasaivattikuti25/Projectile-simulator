@@ -27,8 +27,7 @@ export const MotionGraphs = () => {
             const vy = vy0 - g * currentTime;
             const v = Math.sqrt(vx0 * vx0 + vy * vy);
 
-            // Current Height
-            const [_, y] = getProjectilePosition(currentTime, launchVelocity, launchAngle, gravity, [0, 0, 0], isAntiGravity);
+            const [, y] = getProjectilePosition(currentTime, launchVelocity, launchAngle, gravity, [0, 0, 0], isAntiGravity);
 
             if (y < 0 && !isAntiGravity) {
                 clearInterval(interval);

@@ -1,7 +1,4 @@
-
 import * as THREE from 'three';
-
-export const GRAVITY_EARTH = 9.81;
 
 /**
  * Calculates the position of the projectile at a specific time t.
@@ -26,8 +23,6 @@ export const getProjectilePosition = (
     const vx0 = v0 * Math.cos(rad);
     const vy0 = v0 * Math.sin(rad);
 
-    // Wind effect: lighter objects affected more
-    // Drag coefficient simplified: effect inversely proportional to mass
     const windEffect = (windSpeed * t) / Math.max(mass, 0.1);
 
     const x = startPos[0] + vx0 * t + windEffect;

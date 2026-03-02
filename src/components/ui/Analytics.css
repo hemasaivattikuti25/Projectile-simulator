@@ -28,47 +28,6 @@
     }
 }
 
-
-.chart-wrapper {
-    flex: 1;
-    min-width: 0;
-    position: relative;
-    padding: 1rem;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.6) !important;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.chart-wrapper:hover {
-    background: rgba(255, 255, 255, 0.8);
-    border-color: rgba(59, 130, 246, 0.4);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-
-.chart-title {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    color: #4b5563;
-    margin: 0 0 1rem 0;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.chart-title::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: #00f2ff;
-    border-radius: 50%;
-}
-
 .chart-container h4 {
     color: white !important;
     font-size: 0.9rem;
@@ -79,8 +38,3 @@
     opacity: 1;
 }
 
-.recharts-cartesian-axis-tick-value {
-    fill: #e6e6e6 !important;
-    font-weight: 600;
-    font-size: 11px;
-}
